@@ -8,3 +8,9 @@
 //Parse the data
 //Print data and Marvel's attribution ('Data provided by Marvel. (c) 2014 Marvel')
 
+//test config file reading for API keys
+
+var config = require('config/config.json');
+//var keys = JSON.parse(config);
+//console.log(config.test);
+//console.log('Hello world');
