@@ -10,7 +10,4 @@
 
 //test config file reading for API keys
 
-var config = require('config/config.json');
-//var keys = JSON.parse(config);
-//console.log(config.test);
-//console.log('Hello world');
+var config = require('./config/config.js');
