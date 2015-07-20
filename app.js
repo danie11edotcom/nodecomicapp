@@ -12,7 +12,8 @@ var comic = require('./comic');
 //Solution: Build a command line app to retrieve Marvel character summary for given name using Node.js and Marvel API
 
 var character = "spider-man";
-var key = config.key_pub;
+var key_pub = config.key_pub;
+var key_priv = config.key_priv;
 
 function printMessage(character, description) {
 	var message = character + "'s description is: " + description;
@@ -21,11 +22,13 @@ function printMessage(character, description) {
 
 //Plan
 //Connect to the API URL (http://gateway.marvel.com:80/v1/public/characters?name=character&apikey=publickey)
-var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character + "&apikey=" + key, function(response){
-	console.dir(responseStatusCode);
+var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character + "&apikey=" + key_pub + "&hash=" + key_priv, function(response){
+	console.dir(response.StatusCode);
 	
 	//Read the data (description is in results array -->results.description?)
-
+	response.on('data', function (chunk) {
+		console.log('BODY: ' + chunk);
+	})
 
 	//Parse the data
 
