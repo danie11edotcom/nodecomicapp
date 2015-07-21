@@ -16,7 +16,7 @@ var md5String = time_stamp + key_priv + key_pub;
 var hash = crypto.createHash('md5').update(md5String).digest('hex');
 
 function printMessage(character, description) {
-	var message = character + "'s description is: " + description;
+	var message = character + ": " + description;
 	console.log(message);
 }
 
@@ -32,7 +32,8 @@ var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name="
 			});
 			response.on('end', function(){
 				var characterData = JSON.parse(body);
-				console.dir(characterData);
+				printMessage(characterData["data"].results[0].name, characterData["data"].results[0].description);
+				//console.dir(characterData["data"].results[0]);
 			});
 			
 			//Parse the data
