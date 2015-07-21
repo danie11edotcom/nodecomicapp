@@ -15,8 +15,8 @@ var time_stamp = Math.floor(new Date() / 1000);
 var md5String = time_stamp + key_priv + key_pub;
 var hash = crypto.createHash('md5').update(md5String).digest('hex');
 
-function printMessage(character, description) {
-	var message = character + ": " + description;
+function printMessage(character, description, attribution) {
+	var message = character + ": " + description + "\n" +attribution;
 	console.log(message);
 }
 
@@ -26,17 +26,21 @@ var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name="
 	  function(response){
 			var body = "";
 	
-			//Read the data (description is in results array -->results.description?)
+			//Read the data
 			response.on('data', function (chunk) {
 				body += chunk;
 			});
+
 			response.on('end', function(){
+				//Parse the data (description is in results object array)
 				var characterData = JSON.parse(body);
-				printMessage(characterData["data"].results[0].name, characterData["data"].results[0].description);
+				//use name from response instead of name entered for correct capitalization and punctuation
+				printMessage(characterData["data"].results[0].name, characterData["data"].results[0].description, characterData["attributionText"]);  
 				//console.dir(characterData["data"].results[0]);
+				//console.dir(characterData["attributionText"]);
 			});
 			
-			//Parse the data
+			
 
 
 			//Print data and Marvel's attribution ('Data provided by Marvel. (c) 2014 Marvel') -- use attributionText from response
