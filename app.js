@@ -22,15 +22,19 @@ function printMessage(character, description) {
 
 //Plan
 //Connect to the API URL (http://gateway.marvel.com:80/v1/public/characters?name=character&apikey=publickey)
-var request = http.get("http://gateway.marvel.com:80/v1/public/characters?ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, 
+var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character +"&ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, 
 	  function(response){
-			console.dir(response.statusCode);
+			var body = "";
 	
 			//Read the data (description is in results array -->results.description?)
 			response.on('data', function (chunk) {
-				console.log('BODY: ' + chunk);
-			})
-
+				body += chunk;
+			});
+			response.on('end', function(){
+				var characterData = JSON.parse(body);
+				console.dir(characterData);
+			});
+			
 			//Parse the data
 
 
@@ -41,7 +45,7 @@ var request = http.get("http://gateway.marvel.com:80/v1/public/characters?ts=" +
 });
 
 request.on('error', function(error){
-	//console.error(error.message);
+	console.error(error.message);
 });
 
 //Use module.exports to export function to get comic character info
