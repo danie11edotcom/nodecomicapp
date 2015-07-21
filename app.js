@@ -1,8 +1,9 @@
 //Require Section
+var comic = require('./comic');							//comic file for method to get character data
 var http = require("http");									//http for get method to connect to API
 var crypto = require('crypto');							//crypto for md5 hash
 var config = require('./config/config');		//config file for API keys 
-var comic = require('./comic');							//comic file for method to get character data
+
 
 
 //Prepare
@@ -12,12 +13,10 @@ var comic = require('./comic');							//comic file for method to get character d
 var character = "spider-man";
 var key_pub = config.key_pub;
 var key_priv = config.key_priv;
-var time_stamp = Math.floor(new Date() / 1000); //Math.floor(new Date() / 1000);
-// create var for md5 has calculationvar hash = 
+var time_stamp = Math.floor(new Date() / 1000);
 var md5String = time_stamp + key_priv + key_pub;
 var hash = crypto.createHash('md5').update(md5String).digest('hex');
-console.log(time_stamp);
-console.log(hash);
+
 
 function printMessage(character, description) {
 	var message = character + "'s description is: " + description;
@@ -26,19 +25,20 @@ function printMessage(character, description) {
 
 //Plan
 //Connect to the API URL (http://gateway.marvel.com:80/v1/public/characters?name=character&apikey=publickey)
-var request = http.get("http://gateway.marvel.com:80/v1/public/characters?ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, function(response){
-	console.dir(response.StatusCode);
+var request = http.get("http://gateway.marvel.com:80/v1/public/characters?ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, 
+	  function(response){
+			console.dir(response.StatusCode);
 	
-	//Read the data (description is in results array -->results.description?)
-	response.on('data', function (chunk) {
-		console.log('BODY: ' + chunk);
-	})
+			//Read the data (description is in results array -->results.description?)
+			response.on('data', function (chunk) {
+				console.log('BODY: ' + chunk);
+			})
 
-	//Parse the data
+			//Parse the data
 
 
-	//Print data and Marvel's attribution ('Data provided by Marvel. (c) 2014 Marvel') -- use attributionText from response
-	//printMessage(character, "He's a really cool dude!");
+			//Print data and Marvel's attribution ('Data provided by Marvel. (c) 2014 Marvel') -- use attributionText from response
+			//printMessage(character, "He's a really cool dude!");
 
 
 });
