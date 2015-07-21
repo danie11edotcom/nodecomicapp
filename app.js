@@ -14,6 +14,10 @@ var comic = require('./comic');
 var character = "spider-man";
 var key_pub = config.key_pub;
 var key_priv = config.key_priv;
+var time_stamp = Math.floor(new Date() / 1000);
+// create var for md5 has calculationvar hash = 
+var md5String = time_stamp + key_priv + key_pub;
+var hash = require();
 
 function printMessage(character, description) {
 	var message = character + "'s description is: " + description;
