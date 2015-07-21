@@ -1,14 +1,9 @@
-//Require http
-var http = require("http");
+//Require Section
+var http = require("http");									//http for get method to connect to API
+var crypto = require('crypto');							//crypto for md5 hash
+var config = require('./config/config');		//config file for API keys 
+var comic = require('./comic');							//comic file for method to get character data
 
-//Require config file for API keys
-var config = require('./config/config');
-
-//Require comic file for method to get character data
-var comic = require('./comic');
-
-//Require crypto for md5 hash
-var crypto = require('crypto');
 
 //Prepare
 //Problem:  A simple way to find Marvel comic character descriptions is needed
