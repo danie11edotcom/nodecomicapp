@@ -38,6 +38,8 @@ var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name="
 				printMessage(characterData["data"].results[0].name, characterData["data"].results[0].description, characterData["attributionText"]);  
 				//console.dir(characterData["data"].results[0]);
 				//console.dir(characterData["attributionText"]);
+				//what if Marvel description is blank? --> Throw message: No description is available for this Marvel comic character
+
 			});
 			
 			
