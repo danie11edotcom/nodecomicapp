@@ -1,13 +1,15 @@
+//Character input
+var character = "thor"; //change to argv input
+
 //Require Section
 var comic = require('./comic');							//comic file for method to get character data
+
+//Require Section
 var http = require("http");									//http for get method to connect to API
 var crypto = require('crypto');							//crypto for md5 hash
 var config = require('./config/config');		//config file for API keys 
 
-//Character input
-var character = "spider-man"; //change to argv input
-
-//Code for comic module
+//Variables
 var key_pub = config.key_pub;
 var key_priv = config.key_priv;
 var time_stamp = Math.floor(new Date() / 1000);
@@ -25,7 +27,6 @@ function printError (error) {
 	console.error(error.message);
 }
 
-
 //Connect to the API URL (http://gateway.marvel.com:80/v1/public/characters?name=character&apikey=publickey)
 var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character +"&ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, 
 	  function(response){
@@ -37,17 +38,26 @@ var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name="
 			});
 
 			response.on('end', function(){
-				try {
-					//Parse the data (description is in results object array)
-					var characterData = JSON.parse(body);
-					//use name from response instead of name entered for correct capitalization and punctuation
-					printMessage(characterData["data"].results[0].name, characterData["data"].results[0].description, characterData["attributionText"]);  
-					//console.dir(characterData["data"].results[0]);
-					//console.dir(characterData["attributionText"]);
-				} catch (error) {
-					//Parse error
-					printError(error);
+				if (response.statusCode === 200) {
+					try {
+						//Parse the data (description is in results object array)
+						var characterData = JSON.parse(body);
+						//use name from response instead of name entered for correct capitalization and punctuation
+						printMessage(characterData["data"].results[0].name, characterData["data"].results[0].description, characterData["attributionText"]);  
+						//console.dir(characterData["data"].results[0]);
+						//console.dir(characterData["attributionText"]);
+					} catch (error) {
+						//Parse error
+						printError(error);
+						console.log(response.statusCode);
+					}
+				} else {
+					//Status code error
+					printError({message: "There was an error getting the profile for " + character + ". (" + http.STATUS_CODES[response.statusCode] + ")"})
 				}
+
+
+
 
 					//what if Marvel description is blank? --> Throw message: No description is available for this Marvel comic character
 
