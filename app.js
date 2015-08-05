@@ -4,11 +4,10 @@ var http = require("http");									//http for get method to connect to API
 var crypto = require('crypto');							//crypto for md5 hash
 var config = require('./config/config');		//config file for API keys 
 
-//Prepare
-//Problem:  A simple way to find Marvel comic character descriptions is needed
-//Solution: Build a command line app to retrieve Marvel character summary for given name using Node.js and Marvel API
+//Character input
+var character = "spider-man"; //change to argv input
 
-var character = "spider-man";
+//Code for comic module
 var key_pub = config.key_pub;
 var key_priv = config.key_priv;
 var time_stamp = Math.floor(new Date() / 1000);
@@ -20,7 +19,6 @@ function printMessage(character, description, attribution) {
 	console.log(message);
 }
 
-//Plan
 //Connect to the API URL (http://gateway.marvel.com:80/v1/public/characters?name=character&apikey=publickey)
 var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character +"&ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, 
 	  function(response){
