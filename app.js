@@ -14,10 +14,17 @@ var time_stamp = Math.floor(new Date() / 1000);
 var md5String = time_stamp + key_priv + key_pub;
 var hash = crypto.createHash('md5').update(md5String).digest('hex');
 
+//Print out message
 function printMessage(character, description, attribution) {
 	var message = character + ": " + description + "\n" +attribution;
 	console.log(message);
 }
+
+//Print out error message
+function printError (error) {
+	console.error(error.message);
+}
+
 
 //Connect to the API URL (http://gateway.marvel.com:80/v1/public/characters?name=character&apikey=publickey)
 var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character +"&ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, 
@@ -49,8 +56,7 @@ var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name="
 
 });
 
-request.on('error', function(error){
-	console.error(error.message);
-});
+//Connection error
+request.on('error', printError);
 
 //Use module.exports to export function to get comic character info
