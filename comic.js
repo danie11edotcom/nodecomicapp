@@ -12,7 +12,7 @@ var hash = crypto.createHash('md5').update(md5String).digest('hex');
 
 //Print out message
 function printMessage(character, description, attribution) {
-	var message = character + ": " + description + "\n" +attribution;
+	var message = character + ": " + "\n" + description + "\n" +attribution;
 	console.log(message);
 }
 
