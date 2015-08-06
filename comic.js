@@ -29,9 +29,8 @@ function get(character) {
                             //Parse the data (description is in results object array)
                             var characterData = JSON.parse(body);
                             if (characterData["data"].results[0].description !== "") {
-                                //use name from response instead of name entered for correct capitalization and punctuation
                                 print.printMessage(characterData.data.results[0].name, characterData.data.results[0].description);
-                                print.printAttribution(characterData.attributionText)
+                                print.printAttribution(characterData.attributionText);
                             } else {
                                 print.printBlankDes(characterData.data.results[0].name);
                             }
