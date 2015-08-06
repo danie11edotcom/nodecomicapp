@@ -7,8 +7,8 @@ var print = {
         console.log(attribution);
     },
     //Print character name, description and attribution
-    printMessage:       function (character, description, attribution) {
-        var message = "\n" + character + ": " + "\n" + description + "\n" + attribution;
+    printMessage:       function (character, description) {
+        var message = "\n" + character + ": " + "\n" + description;
         console.log(message);
     },
 
