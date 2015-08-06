@@ -22,7 +22,7 @@ function printError (error) {
 }
 
 function get(character) {
-	//Connect to the API URL (http://gateway.marvel.com:80/v1/public/characters?name=character&apikey=publickey)
+	//Connect to the API URL
 	var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character +"&ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash, 
 		  function(response){
 				var body = "";
@@ -39,8 +39,6 @@ function get(character) {
 							var characterData = JSON.parse(body);
 							//use name from response instead of name entered for correct capitalization and punctuation
 							printMessage(characterData["data"].results[0].name, characterData["data"].results[0].description, characterData["attributionText"]);  
-							//console.dir(characterData["data"].results[0]);
-							//console.dir(characterData["attributionText"]);
 						} catch (error) {
 							//Parse error
 							printError(error);
@@ -50,14 +48,11 @@ function get(character) {
 						//Status code error
 						printError({message: "There was an error getting the profile for " + character + ". (" + http.STATUS_CODES[response.statusCode] + ")"})
 					}
-
-					//TODO: what if Marvel description is blank? --> Throw message: No description is available for this Marvel comic character
-
-				});
+				});	
 	});
 	//Connection error
 	request.on('error', printError);
 }
 
 //Use module.exports to export function to get comic character info
-module.exports.get = get;
+module.exports.get = get; 
