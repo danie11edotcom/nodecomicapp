@@ -14,6 +14,10 @@ var hash = crypto.createHash('md5').update(md5String).digest('hex');
 function printMessage(character, description, attribution) {
 	var message = character + ": " + "\n" + description + "\n" +attribution;
 	console.log(message);
+} 
+
+function printBlankDes(description) {
+	console.log("Sorry, no description exists for this Marvel character.");
 }
 
 //Print out error message
