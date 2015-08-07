@@ -9,7 +9,7 @@ node app.js hulk
 ```
 3.	The app will retrieve the character description if a valid name is entered.
 Note: Character names with spaces have to be in double quotes
-	-	![Command to find description for Hulk](/img/commandPrompt1.png "Find description for Hulk")
+	-	![Command to find description for Hulk](https://github.com/danie11edotcom/nodecomicapp/blob/documentation/img/commandPrompt1.PNG "Find description for Hulk")
 	-	![Results for Hulk](/img/commandPrompt2.png "Description results for Hulk")
 	-	![Command to find description for Hulk and Spider-Man](/img/commandPrompt3.png "Find description for Hulk and Spider-Man")
 	-	![Results for Hulk and Spider-Man](/img/commandPrompt4.png "Description results for Hulk and Spider-Man")
