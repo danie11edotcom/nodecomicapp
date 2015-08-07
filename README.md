@@ -12,9 +12,9 @@ Note: Character names with spaces have to be in double quotes
 
 ## Sample Images
 -	![Command to find description for Hulk](https://github.com/danie11edotcom/nodecomicapp/blob/documentation/img/commandPrompt1.PNG "Find description for Hulk")
--	![Results for Hulk](/img/commandPrompt2.png "Description results for Hulk")
--	![Command to find description for Hulk and Spider-Man](/img/commandPrompt3.png "Find description for Hulk and Spider-Man")
--	![Results for Hulk and Spider-Man](/img/commandPrompt4.png "Description results for Hulk and Spider-Man")
+-	![Results for Hulk](https://github.com/danie11edotcom/nodecomicapp/blob/documentation/img/commandPrompt2.PNG "Description results for Hulk")
+-	![Command to find description for Hulk and Spider-Man](https://github.com/danie11edotcom/nodecomicapp/blob/documentation/img/commandPrompt3.PNG "Find description for Hulk and Spider-Man")
+-	![Results for Hulk and Spider-Man](https://github.com/danie11edotcom/nodecomicapp/blob/documentation/img/commandPrompt4.PNG "Description results for Hulk and Spider-Man")
 
 ## Requirements
 -	[Node.js](https://nodejs.org/) - this project uses v.0.12.7
