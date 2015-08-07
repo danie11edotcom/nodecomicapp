@@ -3,7 +3,11 @@ Command line application to retrieve Marvel comic character descriptions using t
 
 ## How it works
 1. Open terminal/command line to project directory
-2. Enter node app.js and the name of one or more Marvel comic characters separated by a single space. The app will retrieve the character description if a valid name is entered.
+2. Enter node app.js and the name of one or more Marvel comic characters separated by a single space. 
+```javascript
+node app.js hulk
+```
+  -	The app will retrieve the character description if a valid name is entered.
 Note: Character names with spaces have to be in double quotes
 	-	![Command to find description for Hulk](img/commandPrompt1 "Find description for Hulk")
 
