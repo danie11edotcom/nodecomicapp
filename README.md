@@ -11,12 +11,15 @@ node app.js hulk
 Note: Character names with spaces have to be in double quotes.
 
 ## Sample Images
-Find description for Hulk
+Command to enter to find description for Hulk
 ![Command to find description for Hulk](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt1.PNG "Find description for Hulk")
+
 Description results for Hulk
 ![Results for Hulk](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt2.PNG "Description results for Hulk")
+
 Find description for Hulk and Spider-Man
 ![Resulsts for Hulk and Spider-Man](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt3.PNG "Description results for Hulk and Spider-Man")
+
 Description results for Iron Man and Wolverine
 ![Results for Iron Man and Wolverine](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt4.PNG "Description results for Iron Man and Wolverine")
 
