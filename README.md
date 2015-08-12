@@ -1,13 +1,13 @@
 # Command Line Marvel Comic App
 Command line application to retrieve Marvel comic character descriptions using the Marvel API built with Node.js
 
-## How It Works
+## Getting Started
 - Open terminal/command line to project directory
 - Enter node app.js and the name of one or more Marvel comic characters separated by a single space. 
 ```javascript
 node app.js hulk
 ```
-- The app will retrieve the character description if a valid name is entered.
+- The app will retrieve the character description if a valid Marvel character name is entered.
 Note: Character names with spaces have to be in double quotes.
 
 ## Sample Images
