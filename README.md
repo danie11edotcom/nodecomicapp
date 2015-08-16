@@ -23,6 +23,9 @@ Find description for Hulk and Spider-Man
 Description results for Iron Man and Wolverine
 ![Results for Iron Man and Wolverine](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt4.PNG "Description results for Iron Man and Wolverine")
 
+Results for Hawkeye (valid Marvel character with no description provided by Marvel)
+![Results for Hawkeye](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt5.PNG)
+
 ## Requirements
 -	[Node.js](https://nodejs.org/) - this project uses v.0.12.7
 -	[Marvel API](http://developer.marvel.com/docs) public and private keys
