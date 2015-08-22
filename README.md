@@ -31,5 +31,5 @@ Results for Hawkeye (valid Marvel character with no description provided by Marv
 -	[Marvel API](http://developer.marvel.com/docs) public and private keys
 
 ### Future Improvement Ideas
-- [ ] List Marvel attribution once when multiple names are entered
+- [x] List Marvel attribution once when multiple names are entered
 - [ ] Include a prompt to search multiple times without having to enter node app.js each time
