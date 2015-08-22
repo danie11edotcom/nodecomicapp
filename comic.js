@@ -30,7 +30,6 @@ function get(character) {
                             var characterData = JSON.parse(body);
                             if (characterData["data"].results[0].description !== "") {
                                 print.printMessage(characterData.data.results[0].name, characterData.data.results[0].description);
-                                print.printAttribution(characterData.attributionText);
                             } else {
                                 print.printBlankDes(characterData.data.results[0].name);
                             }
@@ -49,5 +48,23 @@ function get(character) {
     request.on('error', print.printError);
 }
 
+function attr(character) {
+    //Connect to the API URL
+    var attribution = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character + "&ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash,
+                           function (response) {
+                var body = "";
+
+                //Read the data
+                response.on('data', function (chunk) {
+                    body += chunk;
+                });
+
+                response.on('end', function () {
+                            var characterData = JSON.parse(body);
+                            print.printAttribution(characterData.attributionText);
+                });
+            });}
+
 //Use module.exports to export function to get comic character info
 module.exports.get = get;
+module.exports.attr = attr;
