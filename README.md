@@ -1,5 +1,5 @@
-# Command Line Marvel Comic App
-Command line application to retrieve Marvel comic character descriptions using the Marvel API built with Node.js
+# Marvel Comic Command Line App
+Node.js command line application to retrieve Marvel comic character descriptions using the Marvel API 
 
 ## Requirements
 -	[Node.js](https://nodejs.org/) - this project uses v.0.12.7
