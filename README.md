@@ -1,6 +1,10 @@
 # Command Line Marvel Comic App
 Command line application to retrieve Marvel comic character descriptions using the Marvel API built with Node.js
 
+## Requirements
+-	[Node.js](https://nodejs.org/) - this project uses v.0.12.7
+-	[Marvel API](http://developer.marvel.com/docs) public and private keys
+
 ## Getting Started
 - Open terminal/command line to project directory
 - Enter node app.js and the name of one or more Marvel comic characters separated by a single space. 
@@ -25,10 +29,6 @@ Description results for Iron Man and Wolverine
 
 Results for Hawkeye (valid Marvel character with no description provided by Marvel)
 ![Results for Hawkeye](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt5.PNG)
-
-## Requirements
--	[Node.js](https://nodejs.org/) - this project uses v.0.12.7
--	[Marvel API](http://developer.marvel.com/docs) public and private keys
 
 ### Future Improvement Ideas
 - [x] List Marvel attribution once when multiple names are entered
