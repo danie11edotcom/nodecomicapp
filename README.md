@@ -26,6 +26,7 @@ module.exports = config;
 node app.js hulk
 ```
 - The app will retrieve the character description if a valid Marvel character name is entered.
+
 Note: Character names with spaces have to be in double quotes.
 
 ## Sample Images
@@ -45,5 +46,4 @@ Results for Hawkeye (valid Marvel character with no description provided by Marv
 ![Results for Hawkeye](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/commandPrompt5.PNG)
 
 ### Future Improvement Ideas
-- [x] List Marvel attribution once when multiple names are entered
 - [ ] Include a prompt to search multiple times without having to enter node app.js each time
