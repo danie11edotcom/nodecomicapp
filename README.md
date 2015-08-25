@@ -5,7 +5,21 @@ Command line application to retrieve Marvel comic character descriptions using t
 -	[Node.js](https://nodejs.org/) - this project uses v.0.12.7
 -	[Marvel API](http://developer.marvel.com/docs) public and private keys
 
-## Getting Started
+## How It Works
+- Download latest version of Node.js, if needed
+- Sign up for a Marvel Developer account and get a public and private API key
+- Download the Zip file of the project
+- Create a directory in the root project directory named config
+- Create a file called config.js inside the config directory
+- Inside the config.js file declare and initialize a global variable called config and export the module as follows:
+```
+var config = {
+	key_pub:  //public API key
+	key_priv: //private API key
+};
+
+module.exports = config;
+```
 - Open terminal/command line to project directory
 - Enter node app.js and the name of one or more Marvel comic characters separated by a single space. 
 ```javascript
