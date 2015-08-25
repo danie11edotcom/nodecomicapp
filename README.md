@@ -14,7 +14,7 @@ Node.js command line application to retrieve Marvel comic character descriptions
 - Inside the config.js file declare and initialize a global variable called config and export the module as follows:
 ```
 var config = {
-	key_pub:  //public API key
+	key_pub:  //public API key,
 	key_priv: //private API key
 };
 
