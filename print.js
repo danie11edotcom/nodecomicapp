@@ -17,9 +17,9 @@ var print = {
         var noDescription = "\n" + character + " does not have a description.";
         console.log(noDescription);
     },
-    //Print out error message
+    //Print out error message in red text then reset color
     printError:             function (error) {
-        console.error(error.message);
+        console.error('\x1b[31m' + error.message + '\x1b[0m');
     }
 };
 
