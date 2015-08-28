@@ -15,35 +15,35 @@ var hash = crypto.createHash('md5').update(md5String).digest('hex');
 function get(character) {
     //Connect to the API URL
     var request = http.get("http://gateway.marvel.com:80/v1/public/characters?name=" + character + "&ts=" + time_stamp + "&apikey=" + key_pub + "&hash=" + hash,
-                           function (response) {
-                var body = "";
+      function (response) {
+        var body = "";
 
-                //Read the data
-                response.on('data', function (chunk) {
-                    body += chunk;
-                });
+        //Read the data
+        response.on('data', function (chunk) {
+            body += chunk;
+        });
 
-                response.on('end', function () {
-                    if (response.statusCode === 200) {
-                        try {
-                            //Parse the data (description is in results object array)
-                            var characterData = JSON.parse(body);
-                            if (characterData["data"].results[0].description !== "") {
-                                print.printMessage(characterData.data.results[0].name, characterData.data.results[0].description);
-                            } else {
-                                print.printBlankDes(characterData.data.results[0].name);
-                            }
-                        } catch (error) {
-                            //Parse error
-                            print.printError(error);
-                            console.log(response.statusCode);
-                        }
+        response.on('end', function () {
+            if (response.statusCode === 200) {
+                try {
+                    //Parse the data (description is in results object array)
+                    var characterData = JSON.parse(body);
+                    if (characterData["data"].results[0].description !== "") {
+                        print.printMessage(characterData.data.results[0].name, characterData.data.results[0].description);
                     } else {
-                        //Status code error
-                        print.printError({message: "There was an error getting the profile for " + character + ". (" + http.STATUS_CODES[response.statusCode] + ")"})
+                        print.printBlankDes(characterData.data.results[0].name);
                     }
-                });
-            });
+                } catch (error) {
+                    //Parse error
+                    print.printError(error);
+                    console.log(response.statusCode);
+                }
+            } else {
+                //Status code error
+                print.printError({message: "There was an error getting the profile for " + character + ". (" + http.STATUS_CODES[response.statusCode] + ")"})
+            }
+        });
+    });
     //Connection error
     request.on('error', print.printError);
 }
