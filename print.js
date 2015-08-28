@@ -6,9 +6,9 @@ var print = {
 		var message = "\n" + attribution;
 		console.log(message);
 	},
-	//Print character name, description and attribution
+	//Print character name (text style: bold cyan), description and attribution
 	printMessage:  function (character, description) {
-		var message = "\n" + character + ": " + "\n" + description;
+		var message = "\n" + "\x1b[36;1m" + character  + "\x1b[0m" + ": " + "\n" + description;
 		console.log(message);
 	},
 
