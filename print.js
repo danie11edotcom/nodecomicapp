@@ -3,8 +3,8 @@
 var print = {
 	//Print attribution
 	printAttribution:  function (attribution) {
-		var message = attribution;
-		console.log(attribution);
+		var message = "\n" + attribution;
+		console.log(message);
 	},
 	//Print character name, description and attribution
 	printMessage:  function (character, description) {
@@ -19,7 +19,7 @@ var print = {
 	},
 	//Print out error message in red text then reset color
 	printError:  function (error) {
-	console.error('\x1b[31m' + error.message + '\x1b[0m');
+	console.error("\n" + "\x1b[31m" + error.message + "\x1b[0m");
 	}
 };
 
