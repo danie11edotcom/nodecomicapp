@@ -1,3 +1,5 @@
+'use strict';
+
 //Require Section
 var http = require("http"); //http for get method to connect to API
 var crypto = require('crypto'); //crypto for md5 hash

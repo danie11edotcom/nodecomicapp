@@ -1,3 +1,5 @@
+'use strict';
+
 //Require Section
 var comic = require('./comic');
 var print = require('./print');

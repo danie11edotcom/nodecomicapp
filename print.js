@@ -1,3 +1,5 @@
+'use strict';
+
 //Print functions
 
 var print = {
