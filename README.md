@@ -7,10 +7,10 @@ Node.js command line application to retrieve Marvel comic character descriptions
 
 ## How It Works
 - Download latest version of Node.js, if needed
-- Sign up for a Marvel Developer account and get a public and private API key
 - Download the Zip file of the project
 - Create a directory in the root project directory named config
 - Create a file called config.js inside the config directory
+- Sign up for a Marvel Developer account and get a public and private API key
 - Inside the config.js file declare and initialize a global variable called config and export the module as follows:
 ```
 var config = {
