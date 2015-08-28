@@ -36,7 +36,6 @@ function get(character) {
                 } catch (error) {
                     //Parse error
                     print.printError(error);
-                    console.log(response.statusCode);
                 }
             } else {
                 //Status code error
