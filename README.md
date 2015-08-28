@@ -35,3 +35,5 @@ Preview of app showing results for Hulk, Spider-Man, Iron Man, Wolverine and Haw
 
 ### Future Improvement Ideas
 - [ ] Include a prompt to search multiple times without having to enter node app.js each time
+- [ ] Remove Marvel attribute on error message
+- [ ] Update error message with more description - possibly include invalid name entered in response
