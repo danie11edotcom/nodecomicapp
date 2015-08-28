@@ -1,8 +1,8 @@
 //Require Section
 var http = require("http"); //http for get method to connect to API
 var crypto = require('crypto'); //crypto for md5 hash
-var config = require('./config/config'); //config file for API keys 
-var print = require('./print');  //print for functions to print messages to user
+var config = require('./config/config'); //config  for API keys 
+var print = require('./print');  //print for user message print functions
 
 //Variables
 var key_pub = config.key_pub;
