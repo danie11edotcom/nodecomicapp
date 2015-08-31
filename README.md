@@ -37,4 +37,4 @@ Preview of app showing results for Hulk, Spider-Man, Iron Man, Wolverine and Haw
 - [ ] Review node.js module chalk as an alternative to ANSI escape codes for string styling
 - [ ] Include a prompt to search multiple times without having to enter node app.js each time
 - [ ] Remove Marvel attribute on error message
-- [ ] Update error message with more description - possibly include invalid name (process.argv value) entered in response
+- [ ] Update error message with clearer descriptions regarding type of error (parse, connection, status code, etc)
