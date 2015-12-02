@@ -34,6 +34,7 @@ Preview of app showing results for Hulk, Spider-Man, Iron Man, Wolverine and Haw
 ![App preview showing results for Hulk, Spider-Man, Iron Man, Wolverine and Hawkeye](https://github.com/danie11edotcom/nodecomicapp/blob/master/img/nodeapppreview.gif)
 
 ### Future Improvement Ideas
+- [ ] Review [console-png](https://www.npmjs.com/package/console-png) for potential use with
 - [ ] Review node.js module chalk as an alternative to ANSI escape codes for string styling
 - [ ] Include a prompt to search multiple times without having to enter node app.js each time
 - [ ] Remove Marvel attribute on error message
